@@ -24,7 +24,8 @@
 // 3.Зберегти результат користувача
 // 4.Вивести у консоль
 
-const message = "Чи хоче ти продовжити підписку?";
+const message = "Чи хочете ви продовжити підписку?";
 confirm(message);
-const renewSub = confirm(message);
-console.log(renewSub)
+const leavePage = confirm(message);
+console.log(leavePage)
+
