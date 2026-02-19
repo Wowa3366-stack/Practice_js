@@ -24,8 +24,8 @@
 // 3.Зберегти результат користувача
 // 4.Вивести у консоль
 
-const message = "Чи хочете ви продовжити підписку?";
-confirm(message);
-const leavePage = confirm(message);
-console.log(leavePage)
+// const message = "Чи хочете ви продовжити підписку?";
+// confirm(message);
+// const leavePage = confirm(message);
+// console.log(leavePage)
 
