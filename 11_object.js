@@ -119,8 +119,9 @@ const car = {
   }
 }
 
-
-const {make, model: carmodel, year, features = [], safety: {airbags, antilock_brakes, stability_control}} = car
+const { features: [features1, features2, features3]} = car 
+// Варіант 1
+// const {make, model: carmodel, year, features = [], safety: {airbags, antilock_brakes, stability_control}} = car
 // console.log(make, carmodel, year, features, airbags, antilock_brakes, stability_control);
 
 
@@ -140,7 +141,14 @@ const movie = {
 }
 
 
-const {title, director:{name:directorName, nationality:directorNationality}, actors,  release_year, ratings} = movie;
+const {actors} = movie
+const {actors: [actor1, actor2]} = movie //Варіант 1
+console.log(actors)
+console.log(actor1, actor2)
+const[actor3, actor4] = movie.actors
+console.log(actor3, actor4);
+
+// const {title, director:{name:directorName, nationality:directorNationality}, actors,  release_year, ratings} = movie;
 // console.log(title, directorName, directorNationality, actors, release_year, ratings);
 
 
@@ -195,3 +203,19 @@ return sum / grades.lengh;
 
 
 calculateAverageGrade(student)
+
+
+// Напишіть функцію, яка отримує об'єкт 
+// з ім'ям, прізвищем та віком та використовує 
+// деструктуризацію для повернення рядка, 
+// що містить інформацію про цю людину в такому форматі:
+//  "Мене звати Ім'я Прізвище і мені Вік років".
+
+
+const personInfo = function (personObg){
+const {name, lastName, age} = personObg;
+return `Мене звати ${name} ${lastName} і мені ${age} років`
+}
+console.log(personInfo({name:"Vova", lastName:"Matkovskyi", age:14}));
+
+personInfo({name:"Vova", lastName:"Matkovskyi", age:14});
