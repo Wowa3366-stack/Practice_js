@@ -116,7 +116,7 @@ const myScore = function (score) {
 };
 
 myScore(93);
-console.log(myScore(93));
+// console.log(myScore(93));
 
 /*
  * Напиши функцію calculateTotalPrice(items)
@@ -124,7 +124,7 @@ console.log(myScore(93));
  */
 
 const cart = [54, 28, 105, 70, 92, 17, 120, 12, 25, 90];
-  let total = 0;
+let total = 0;
 const calculateTotalPrice = function (items) {
   for (const item of items) {
     total += item;
@@ -132,7 +132,54 @@ const calculateTotalPrice = function (items) {
   return total;
 };
 
+// console.log(calculateTotalPrice(cart));
+// console.log(calculateTotalPrice([5, 10, 15, 20])); // 50
+// console.log(calculateTotalPrice([100, 200, 300])); // 600
 
-console.log(calculateTotalPrice(cart));
-console.log(calculateTotalPrice([5, 10, 15, 20])); // 50
-console.log(calculateTotalPrice([100, 200, 300])); // 600
+const users2 = [
+  { id: "000", name: "Mango", isActive: true },
+  { id: "001", name: "Poly", isActive: false },
+  { id: "002", name: "Ajax", isActive: true },
+  { id: "003", name: "Chelsey", isActive: false },
+];
+
+// Для кожного елемента колекції (user) перевіримо поле id.
+// Якщо воно збігається з шуканим ідентифікатором, то find припинить
+// виконання і поверне поточний елемент (user) як результат виконання
+
+const findUserById = (users, id) => {
+  let massage = "User не знайдено";
+  for (const user of users) {
+    if (user.id === id) {
+      // console.log('Знайшов user');
+      massage = "Знайшов user";
+    }
+  }
+  return massage;
+};
+
+const result = findUserById(users2, "000");
+// console.log(result);
+
+const students = [
+  { name: "Mango", score: 83 },
+  { name: "Poly", score: 59 },
+  { name: "Ajax", score: 37 },
+  { name: "Kiwi", score: 94 },
+  { name: "Houston", score: 64 },
+];
+
+const findBestStudents = (arrayOfStudents, score) => {
+  let bestStudents = [];
+  for (const student of arrayOfStudents) {
+    console.log(student.score);
+
+    if (student.score >= score) {
+      console.log("знайшли класного студента");
+      bestStudents.push(student.name);
+    }
+  }
+  console.log(bestStudents);
+};
+
+findBestStudents(students, 80);
